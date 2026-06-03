@@ -19,15 +19,22 @@ function BatchPage() {
   const details = useQuery({
     queryKey: ["batch", batchId],
     queryFn: () => api.batchDetails(batchId),
+    retry: 1,
   });
   const schedule = useQuery({
     queryKey: ["schedule", batchId],
     queryFn: () => api.todaysSchedule(batchId),
+    retry: 1,
   });
 
   const b = details.data?.data;
   const subjects: any[] = b?.subjects ?? [];
-  const scheduleItems: any[] = schedule.data?.data?.data ?? schedule.data?.data ?? [];
+  const rawSched = schedule.data?.data;
+  const scheduleItems: any[] = Array.isArray(rawSched)
+    ? rawSched
+    : Array.isArray((rawSched as any)?.data)
+      ? (rawSched as any).data
+      : [];
 
   return (
     <div className="space-y-8">
