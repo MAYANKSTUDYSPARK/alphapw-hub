@@ -39,8 +39,8 @@ export const api = {
     get<ApiEnvelope<any>>(
       `/batches/${encodeURIComponent(batchId)}/todays-schedule`,
     ),
-  videoUrl: (parentId: string, childId: string) =>
+  videoUrl: (batchId: string, childId: string) =>
     get<ApiEnvelope<any>>(
-      `/videos/video-url-details?parentId=${encodeURIComponent(parentId)}&childId=${encodeURIComponent(childId)}`,
+      `/videos/video-url-details?batchId=${encodeURIComponent(batchId)}&parentId=${encodeURIComponent(batchId)}&childId=${encodeURIComponent(childId)}`,
     ),
 };
