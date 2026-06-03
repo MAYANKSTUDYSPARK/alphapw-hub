@@ -46,8 +46,8 @@ function SubjectPage() {
   });
   const items: any[] = content.data?.data ?? [];
 
-  const setType = (t: ContentType) => navigate({ search: (p) => ({ ...p, type: t }), replace: true });
-  const setTopic = (id: string) => navigate({ search: (p) => ({ ...p, topic: id }), replace: true });
+  const setType = (t: ContentType) => navigate({ search: (p: any) => ({ ...p, type: t }), replace: true });
+  const setTopic = (id: string) => navigate({ search: (p: any) => ({ ...p, topic: id }), replace: true });
 
   return (
     <div className="space-y-6">
@@ -62,7 +62,7 @@ function SubjectPage() {
       <header className="rounded-3xl border border-border bg-gradient-to-br from-card to-background p-6">
         <h1 className="text-2xl font-extrabold md:text-3xl">{name ?? "Subject"}</h1>
         <p className="mt-1 text-sm text-muted-foreground">
-          {topicList.length} chapters · {topics.data?.paginate?.videosCount ?? 0} videos
+          {topicList.length} chapters · {(topics.data as any)?.paginate?.videosCount ?? 0} videos
         </p>
       </header>
 

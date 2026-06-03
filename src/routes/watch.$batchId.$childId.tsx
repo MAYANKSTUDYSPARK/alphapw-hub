@@ -10,8 +10,8 @@ export const Route = createFileRoute("/watch/$batchId/$childId")({
   validateSearch: (s: Record<string, unknown>) => ({
     title: typeof s.title === "string" ? s.title : undefined,
   }),
-  head: ({ search }) => ({
-    meta: [{ title: `${search.title ?? "Watch"} · AlphaPW` }],
+  head: ({ params }) => ({
+    meta: [{ title: `Watch · AlphaPW`, name: "description", content: `Lecture ${params.childId}` }],
   }),
   component: WatchPage,
 });
