@@ -53,14 +53,19 @@ function BatchesIndex() {
         <div className="absolute -bottom-16 -left-10 h-56 w-56 rounded-full bg-brand/20 blur-3xl" />
         <div className="relative">
           <span className="inline-flex items-center gap-2 rounded-full border border-brand/40 bg-brand/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand">
-            <BookOpen className="h-3.5 w-3.5" /> AlphaPW
+            <BookOpen className="h-3.5 w-3.5" /> AlphaPW · Padhai ka naya tareeka
           </span>
           <h1 className="mt-4 max-w-2xl text-4xl font-extrabold leading-tight tracking-tight md:text-5xl">
-            Every PW batch.<br />One blazing-fast app.
+            Saari PW batches.<br />Ek hi jagah, bina jhanjhat.
           </h1>
           <p className="mt-3 max-w-xl text-base text-muted-foreground">
-            Browse batches, dive into subjects, watch lectures and grab DPP/notes — all in one clean home.
+            Apni batch chuno, subject kholo, lectures dekho aur DPP/Notes turant download karo — sab kuch fast, clean aur free.
           </p>
+          <div className="mt-5 flex flex-wrap gap-2 text-xs text-muted-foreground">
+            <span className="rounded-full border border-border bg-background/40 px-3 py-1">⚡ Instant HLS playback</span>
+            <span className="rounded-full border border-border bg-background/40 px-3 py-1">📒 Notes + DPP</span>
+            <span className="rounded-full border border-border bg-background/40 px-3 py-1">📅 Today's schedule</span>
+          </div>
         </div>
       </section>
 
